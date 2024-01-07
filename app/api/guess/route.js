@@ -9,7 +9,7 @@ export async function POST(request) {
   const winnerGuess = body.winner;
   const correctYear = body.answer.year;
   const correctState = body.answer.state;
-  console.log(correctYear);
+  // console.log(correctYear);
   // const filePath = path.join(
   //   process.cwd(),
   //   "app",
@@ -1191,7 +1191,7 @@ export async function POST(request) {
   } else if (correctWinner === "d") {
     correctWinnerName = "Democrat";
   } else {
-    correctWinnerName = "Independent or Third Party Candidate";
+    correctWinnerName = "Independent or Third Party";
   }
   // if ((correctWinner == "d" && winnerGuess == "D") || (correctWinner == "r" && winnerGuess == "R") || (correctWinner == "i" && winnerGuess == "I")) {
 
@@ -1205,7 +1205,7 @@ export async function POST(request) {
   return NextResponse.json({
     status: "OK",
     data: {
-      echo: `${resVar} The ${correctWinnerName} won the ${correctYear} United States Presidential Election in ${correctState}.`,
+      echo: `${resVar} The ${correctWinnerName} candidate won the ${correctYear} United States Presidential Election in ${correctState}.`,
     },
   });
 }

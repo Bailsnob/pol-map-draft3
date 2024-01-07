@@ -11,12 +11,19 @@ export default function SettingControls() {
 
   function handleStartClick() {
     let randomState = states[Math.floor(Math.random() * states.length)];
-    let randomYear = Number(minYear) + 4 * Math.floor(Math.random() * (((maxYear - minYear) / 4) + 1));
-    const answer = {state: randomState, year: randomYear};
-    console.log(randomYear);
+    let randomYear =
+      Number(minYear) +
+      4 * Math.floor(Math.random() * ((maxYear - minYear) / 4 + 1));
+    const answer = { state: randomState, year: randomYear };
+    // console.log(randomYear);
     fetch("/api/start", {
       method: "POST",
-      body: JSON.stringify({ minYear: minYear, maxYear: maxYear, states: states, answer: answer}),
+      body: JSON.stringify({
+        minYear: minYear,
+        maxYear: maxYear,
+        states: states,
+        answer: answer,
+      }),
       headers: { "Content-Type": "application/json" },
     })
       .then((data) => data.blob())
@@ -29,7 +36,7 @@ export default function SettingControls() {
           minYear: minYear,
           maxYear: maxYear,
           map: blob,
-          answer: answer
+          answer: answer,
         })
       )
       .catch((err) => console.log("SOMETHING WENT WRONG!", err));
@@ -37,23 +44,26 @@ export default function SettingControls() {
 
   function handleMinYearChange(e) {
     setMinYear(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
 
   function handleMaxYearChange(e) {
     setMaxYear(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
 
   function handleStatesChange() {
     let options = document.getElementById("state-restriction").selectedOptions;
-    let values = Array.from(options).map(({value}) => value);
+    let values = Array.from(options).map(({ value }) => value);
     setStates(values);
-    console.log(values.length);
+    // console.log(values.length);
   }
 
   return (
     <>
+      <h1>
+        <u>Settings</u>
+      </h1>
       <label for="state-restriction" class="form-label">
         States:
       </label>
@@ -119,7 +129,7 @@ export default function SettingControls() {
         <option value="Wisconsin">Wisconsin</option>
         <option value="Wyoming">Wyoming</option>
       </select>
-      min year:{" "}
+      Min Date:{" "}
       <input
         type="number"
         min="1964"
@@ -128,7 +138,7 @@ export default function SettingControls() {
         onChange={handleMinYearChange}
       />
       <br></br>
-      max year:{" "}
+      Max Date:{" "}
       <input
         type="number"
         min="1964"
@@ -136,7 +146,8 @@ export default function SettingControls() {
         defaultValue={"2020"}
         onChange={handleMaxYearChange}
       />
-      <br></br>
+      <br />
+      <br />
       <input type="button" value="start" onClick={handleStartClick} />
     </>
   );

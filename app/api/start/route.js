@@ -6,7 +6,7 @@ import { GameState } from "@/app/context/game-context";
 
 export async function POST(request) {
   const body = await request.json();
-  console.log(body.bananas);
+  // console.log(body.bananas);
   // const {gameState, setGameState} = useContext(GameState);
   // console.log(body.minYear, body.maxYear, body.states);
   // const filePath = path.join(process.cwd(), "app", "database", "data.json");
