@@ -12,7 +12,7 @@ export default function MapPanel() {
 
   return (
     <div className={styles.mapPanel}>
-      {gameState.stage === "setting" && <>NO MAP SHOWN</>}
+      {gameState.stage === "setting" && <></>}
       {gameState.stage === "guessing" && (
         <>
           <Image

@@ -7,10 +7,11 @@ export async function POST(request) {
   // const gameState = useContext(GameState);
   const body = await request.json();
   const winnerGuess = body.winner;
-  const dateGuess = body.date;
-  const marginGuess = body.margin;
-  const correctYear = body.answer.year;
-  const correctState = body.answer.state;
+  const dateGuess = Number(body.date);
+  const marginGuess = Number(body.margin);
+  const correctYear = Number(body.answer.year);
+  const correctState = (body.answer.state);
+  // console.log(1)
   // console.log(correctYear);
   // const filePath = path.join(
   //   process.cwd(),
@@ -1186,31 +1187,36 @@ export async function POST(request) {
     Other: {},
   };
   const correctWinner = solutions["Presidential"][`${correctYear}`][`${correctState}`][0];
-  const correctMargin = solutions["Presidential"][`${correctYear}`][`${correctState}`].substring(1);
+  const correctMargin = Number(solutions["Presidential"][`${correctYear}`][`${correctState}`].substring(1));
+  console.log(correctMargin);
   let correctWinnerName = "";
   if (correctWinner === "r") {
     correctWinnerName = "Republican";
   } else if (correctWinner === "d") {
-    correctWinnerName = "Democrat";
+    correctWinnerName = "Democratic";
   } else {
     correctWinnerName = "Independent or Third Party";
   }
   // if ((correctWinner == "d" && winnerGuess == "D") || (correctWinner == "r" && winnerGuess == "R") || (correctWinner == "i" && winnerGuess == "I")) {
 
   // }
-  let winnerRes =
-    (correctWinner === "d" && winnerGuess === "D") ||
-    (correctWinner === "r" && winnerGuess === "R") ||
-    (correctWinner === "o" && winnerGuess === "I")
-      ? "Correct!"
-      : "Incorrect!";
+  let winnerRes =((correctWinner === "d" && winnerGuess === "D") || (correctWinner === "r" && winnerGuess === "R") || (correctWinner === "o" && winnerGuess === "I")) ? "Correct!" : "Incorrect!";
   
-  let marginRes = (marginGuess <= correctMargin + 2 && marginGuess >= correctMargin - 2) ? "Correct!" : "Incorrect!";
-  let dateRes = (dateGuess <= correctYear + 2 && dateGuess >= correctYear - 2) ? "Correct!" : "Incorrect!";
+
+
+  let marginRes = (Math.max(marginGuess, correctMargin) - Math.min(marginGuess, correctMargin) <= 2) ? "Correct!" : "Incorrect!";
+  let dateRes = (Math.max(dateGuess, correctYear) - Math.min(dateGuess, correctYear) <= 2) ? "Correct!" : "Incorrect!";
+  console.log(winnerRes, marginRes, dateRes);
   let totalRes;
-  if (winnerRes === marginRes === dateRes === "Correct!") totalRes = "Correct!";
-  else if (winnerRes === "Correct!" || marginRes === "Correct!" || dateRes === "Correct!") totalRes = "Partially Correct!";
-  else totalRes = "Incorrect!";
+  console.log((winnerRes === "Correct!") && (marginRes === "Correct!") && (dateRes === "Correct!"));
+  // if (winnerRes === marginRes === dateRes === "Correct!") {
+  if ((winnerRes === "Correct!") && (marginRes === "Correct!") && (dateRes === "Correct!")) {
+    totalRes = "Correct!";
+  } else if (winnerRes === "Correct!" || marginRes === "Correct!" || dateRes === "Correct!") {
+    totalRes = "Partially Correct!";
+  } else {
+    totalRes = "Incorrect!";
+  }
   return NextResponse.json({
     status: "OK",
     data: {

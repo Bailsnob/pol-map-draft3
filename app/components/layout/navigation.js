@@ -19,8 +19,11 @@ export default function Navigation() {
             <Link href="/about" className={styles["nav-length"]}>About</Link>
           </li>
           <li>
-            <Link href="/documentation" className={styles["nav-length"]}>Documentation</Link>
+            <Link href="/instructions" className = {styles["nav-length"]}>Instructions</Link>
           </li>
+          {/* <li>
+            <Link href="/documentation" className={styles["nav-length"]}>Documentation</Link>
+          </li> */}
         </ul>
       </nav>
     </header>
