@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import path from "path";
+// import path from "path";
 // import { useContext } from "react";
 // import { GameState } from "@/app/context/game-context";
 
@@ -7,6 +7,8 @@ export async function POST(request) {
   // const gameState = useContext(GameState);
   const body = await request.json();
   const winnerGuess = body.winner;
+  const dateGuess = body.date;
+  const marginGuess = body.margin;
   const correctYear = body.answer.year;
   const correctState = body.answer.state;
   // console.log(correctYear);
@@ -1183,8 +1185,8 @@ export async function POST(request) {
     Gubernatorial: {},
     Other: {},
   };
-  const correctWinner =
-    solutions["Presidential"][`${correctYear}`][`${correctState}`][0];
+  const correctWinner = solutions["Presidential"][`${correctYear}`][`${correctState}`][0];
+  const correctMargin = solutions["Presidential"][`${correctYear}`][`${correctState}`].substring(1);
   let correctWinnerName = "";
   if (correctWinner === "r") {
     correctWinnerName = "Republican";
@@ -1196,16 +1198,23 @@ export async function POST(request) {
   // if ((correctWinner == "d" && winnerGuess == "D") || (correctWinner == "r" && winnerGuess == "R") || (correctWinner == "i" && winnerGuess == "I")) {
 
   // }
-  let resVar =
+  let winnerRes =
     (correctWinner === "d" && winnerGuess === "D") ||
     (correctWinner === "r" && winnerGuess === "R") ||
-    (correctWinner === "i" && winnerGuess === "I")
+    (correctWinner === "o" && winnerGuess === "I")
       ? "Correct!"
       : "Incorrect!";
+  
+  let marginRes = (marginGuess <= correctMargin + 2 && marginGuess >= correctMargin - 2) ? "Correct!" : "Incorrect!";
+  let dateRes = (dateGuess <= correctYear + 2 && dateGuess >= correctYear - 2) ? "Correct!" : "Incorrect!";
+  let totalRes;
+  if (winnerRes === marginRes === dateRes === "Correct!") totalRes = "Correct!";
+  else if (winnerRes === "Correct!" || marginRes === "Correct!" || dateRes === "Correct!") totalRes = "Partially Correct!";
+  else totalRes = "Incorrect!";
   return NextResponse.json({
     status: "OK",
     data: {
-      echo: `${resVar} The ${correctWinnerName} candidate won the ${correctYear} United States Presidential Election in ${correctState}.`,
+      echo: `${totalRes} The ${correctWinnerName} candidate won the ${correctYear} United States Presidential Election in ${correctState} by a margin of ${correctMargin}%.`,
     },
   });
 }
