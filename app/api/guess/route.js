@@ -1188,7 +1188,7 @@ export async function POST(request) {
   };
   const correctWinner = solutions["Presidential"][`${correctYear}`][`${correctState}`][0];
   const correctMargin = Number(solutions["Presidential"][`${correctYear}`][`${correctState}`].substring(1));
-  console.log(correctMargin);
+  // console.log(correctMargin);
   let correctWinnerName = "";
   if (correctWinner === "r") {
     correctWinnerName = "Republican";
@@ -1206,9 +1206,9 @@ export async function POST(request) {
 
   let marginRes = (Math.max(marginGuess, correctMargin) - Math.min(marginGuess, correctMargin) <= 2) ? "Correct!" : "Incorrect!";
   let dateRes = (Math.max(dateGuess, correctYear) - Math.min(dateGuess, correctYear) <= 2) ? "Correct!" : "Incorrect!";
-  console.log(winnerRes, marginRes, dateRes);
+  // console.log(winnerRes, marginRes, dateRes);
   let totalRes;
-  console.log((winnerRes === "Correct!") && (marginRes === "Correct!") && (dateRes === "Correct!"));
+  // console.log((winnerRes === "Correct!") && (marginRes === "Correct!") && (dateRes === "Correct!"));
   // if (winnerRes === marginRes === dateRes === "Correct!") {
   if ((winnerRes === "Correct!") && (marginRes === "Correct!") && (dateRes === "Correct!")) {
     totalRes = "Correct!";
