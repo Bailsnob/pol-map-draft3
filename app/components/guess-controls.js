@@ -65,13 +65,13 @@ export default function GuessControls() {
         onChange={handleWinnerChange}
       >
         {/* <!-- <option selected>Winner</option> --> */}
-        <option value="D">D</option>
-        <option value="R">R</option>
-        <option value="I">I</option>
+        <option value="D">Democrat</option>
+        <option value="R">Republican</option>
+        <option value="I">Independent</option>
       </select>
       <br />
       <label for="date-guess" class="form-label">
-        Date:
+        Year:
       </label>
       <div class="form-floating">
         {/* <!-- <label for="date-guess" class="form-label">Date:</label> --> */}
@@ -83,7 +83,7 @@ export default function GuessControls() {
           min="1932"
           max="2022"
           step="1"
-          placeholder="Date"
+          placeholder="yyyy"
           data-bs-toggle="tooltip"
           title="When was the election?"
           onChange={handleDateChange}
@@ -108,7 +108,7 @@ export default function GuessControls() {
         />
       </div>
       <br />
-      <input type="button" value="guess" onClick={handleGuessClick} />
+      <input type="button" value="Guess" onClick={handleGuessClick} />
     </>
   );
 }

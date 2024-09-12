@@ -19,7 +19,7 @@ export default function InstructionsPage() {
       <p>
         Once you have chosen your settings, you can click start and begin
         guessing. There should be a choropleth map on the screen; use it to try
-        and find out which part won, by how much they won, and when it was held.
+        and find out which party won, by how much they won, and when it was held.
       </p>
       <br />
       <h3>Tips and Tricks:</h3>

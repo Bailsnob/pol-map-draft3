@@ -1,5 +1,7 @@
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-wrap:normal;
 }
 * {
   box-sizing: border-box;
@@ -11,13 +13,12 @@ a {
   text-decoration: none;
 }
 
-
 .gridContainer {
   position: absolute;
   left: 0;
   top: 0;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "navigation"
     "pageContent";
   grid-template-rows: auto 1fr;

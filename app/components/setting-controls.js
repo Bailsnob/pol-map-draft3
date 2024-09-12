@@ -190,7 +190,7 @@ export default function SettingControls() {
         defaultValue={"1964"}
         onChange={handleMinYearChange}
       />
-      <br></br>
+      <br />
       Max Date:{" "}
       <input
         type="number"
@@ -201,7 +201,7 @@ export default function SettingControls() {
       />
       <br />
       <br />
-      <input type="button" value="start" onClick={handleStartClick} />
+      <input type="button" value="Start" onClick={handleStartClick} />
     </>
   );
 }
