@@ -27,6 +27,7 @@ export default function Navigation() {
         href="/"
         className={styles["nav-length"]}
         id="home"
+        onClick={handleClick}
       >
         HOME
       </Link>
@@ -37,7 +38,6 @@ export default function Navigation() {
               Cool Elections
             </Link>
           </li>
-
           <li>
             <Link href="/development" className={styles["nav-length"]}>
               Development
@@ -54,10 +54,15 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
+            <Link href="/about-me" className={styles["nav-length"]}>
+              About Me
+            </Link>
+          </li>
+          {/* <li>
             <Link href="/game" className={styles["nav-length"]} id="game" onClick={handleClick}>
               Game
             </Link>
-          </li>          
+          </li> */}
         </ul>
       </nav>
     </header>

@@ -53,7 +53,7 @@ export default function GuessControls() {
         <u>Guess</u>
       </h1>
       <label for="winner-guess" class="form-label">
-        Winner:
+        Who won?
       </label>
       <br />
       <select
@@ -71,7 +71,7 @@ export default function GuessControls() {
       </select>
       <br />
       <label for="date-guess" class="form-label">
-        Year:
+        Which Year?
       </label>
       <div class="form-floating">
         {/* <!-- <label for="date-guess" class="form-label">Date:</label> --> */}
@@ -90,7 +90,7 @@ export default function GuessControls() {
         />
       </div>
       <label for="margin-guess" class="form-label">
-        Margin:
+        What Margin?
       </label>
       <div class="form-floating">
         <input

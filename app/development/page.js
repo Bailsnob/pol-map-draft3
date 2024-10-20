@@ -12,7 +12,7 @@ export default function DevelopmentPage() {
         record some of them here.
       </p>
       <br />
-      <ol>
+      <ul>
         <li>
           {" "}
           - scraping data from thousands of websites containing election results
@@ -48,7 +48,7 @@ export default function DevelopmentPage() {
         <li>
           - creating thousands of downloadable csvs containing election results
         </li>
-      </ol>
+      </ul>
       <h1>Future Changes</h1>
       <p>
         To improve the site, I want to keep moving backwards to get more and

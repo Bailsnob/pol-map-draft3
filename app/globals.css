@@ -28,7 +28,8 @@ a {
 
 .navigation {
   grid-area: navigation;
-  background-color: pink;
+  background-color: black;
+  color:white;
 }
 
 .pageContent {

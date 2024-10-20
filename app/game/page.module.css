@@ -6,13 +6,16 @@
     "menu main"
     "menu main";
   grid-template-columns: min-content 1fr;
+  grid-template-columns: 120px auto;
   grid-template-rows: 50px calc(100% - 50px);
-  gap: none;
+  /* gap: 10px; */
+  /* column-gap: 40%; */
+
 }
 
 .header {
   grid-area: header;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(47, 29, 29);
 }
 
 .menu {

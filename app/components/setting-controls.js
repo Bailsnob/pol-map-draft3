@@ -114,9 +114,11 @@ export default function SettingControls() {
 
   return (
     <>
-      <h1>
+      <br />
+      <h3>
         <u>Settings</u>
-      </h1>
+      </h3>
+      <br />
       <label for="state-restriction" class="form-label">
         States:
       </label>
@@ -182,6 +184,8 @@ export default function SettingControls() {
         <option value="Wisconsin">Wisconsin</option>
         <option value="Wyoming">Wyoming</option>
       </select>
+      <br />
+      <br />
       Min Date:{" "}
       <input
         type="number"
@@ -190,6 +194,7 @@ export default function SettingControls() {
         defaultValue={"1964"}
         onChange={handleMinYearChange}
       />
+      <br />
       <br />
       Max Date:{" "}
       <input

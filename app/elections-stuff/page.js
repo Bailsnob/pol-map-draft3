@@ -31,10 +31,10 @@ export default function ElectionsStuff() {
         this phenomenon. After John Tyler's moderate and independent presidency,
         Henry Clay and James K. Polk (the Whig and Democratic candidates,
         respectively) both cast themselves as constituting a full embrace of
-        their respective parties' ideals. However, Clay was, like the party
-        he represented, deeply conflicted over the annexation of Texas, which
-        Tyler was actively pursuing. Clay made several attempts to explain his
-        full thoughts on the issue, but Polk effectively cast Clay as "waffling"
+        their respective parties' ideals. However, Clay was, like the party he
+        represented, deeply conflicted over the annexation of Texas, which Tyler
+        was actively pursuing. Clay made several attempts to explain his full
+        thoughts on the issue, but Polk effectively cast Clay as "waffling"
         while he spoke consistently in favor of annexation. In the end, Clay's
         indecisiveness is seen as a major factor in his narrow loss that year.
       </p>
@@ -61,14 +61,14 @@ export default function ElectionsStuff() {
         before them, ideologically, they were all very similar. Wilson,
         Roosevelt, and Taft (the Democratic, Republican, and Progressive
         candidates, respectively) all styled themselves as progressives, and
-        their disagreements mainly were over the effectiveness of their
-        opponents' proposed reforms, not the ideas behind them. Even Debs, the
-        Socialist candidate viewed Roosevelt as stealing his populist rhetoric
-        to trick voters into reforming, rather than destroying, the Capitalist
-        system. The main takeaway from this similarity is that successful
-        parties know which way the wind blows: they must mold their initiatives
-        and rhetoric to match the popular views of the time, else they die. Such
-        was the fate of Roosevelt's Bull Moose Party.
+        their disagreements were mainly over the effectiveness of proposed
+        reforms, not the ideas behind them. Even Debs, the Socialist candidate
+        viewed Roosevelt as stealing his populist rhetoric to trick voters into
+        reforming, rather than destroying, the Capitalist system. The main
+        takeaway from this similarity is that successful parties know which way
+        the wind blows: they must mold their initiatives and rhetoric to match
+        the popular views of the time, else they die. Such was the fate of
+        Roosevelt's Bull Moose Party.
       </p>
       <br />
       <h3>1968:</h3>
