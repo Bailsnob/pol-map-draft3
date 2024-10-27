@@ -1,6 +1,8 @@
+import styles from "./page.module.css";
+
 export default function ElectionsStuff() {
   return (
-    <div id="maindiv">
+    <div className={styles.maindiv}>
       <h1>Overview</h1>
       <p>
         This is just a place where I want to share some of my favorite

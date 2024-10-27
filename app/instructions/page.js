@@ -1,6 +1,8 @@
+import styles from "./page.module.css";
+
 export default function InstructionsPage() {
   return (
-    <>
+    <div className={styles.maindiv}>
       <h1>Instructions:</h1>
       <h3>Settings:</h3>
       <p>
@@ -48,6 +50,6 @@ export default function InstructionsPage() {
         areas. If it is in the 50s or 60s, that usually signifies a 0-5% margin,
         while anything larger signifies a larger margin.{" "}
       </p>
-    </>
+    </div>
   );
 }

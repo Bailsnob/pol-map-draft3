@@ -1,6 +1,7 @@
 "use client";
 import { useState, useContext } from "react";
 import { DownloadState } from "../context/download-context";
+import styles from "./page.module.css"
 
 // export default function Downloads() {
 //   const [downloadStatus, setDownloadStatus] = useState("");
@@ -173,7 +174,7 @@ export default function Downloads() {
   //   }
   // };
   return (
-    <>
+    <div className={styles.maindiv}>
       <h1>
         <u>Downloads</u>
       </h1>
@@ -284,9 +285,10 @@ export default function Downloads() {
       <br />
       <br />
       {/* <button onClick={handleDownloadClick}>Download</button> */}
-      <b><u><a download href={`../db/${mode}/${year}/${state}.csv`}>
+      {/* could add underline here */}
+      <b><a download href={`../db/${mode}/${year}/${state}.csv`} className={styles.downloadButton}>
         Download
-      </a></u></b>
-    </>
+      </a></b>
+    </div>
   );
 }

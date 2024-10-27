@@ -1,6 +1,8 @@
+import styles from "./page.module.css";
+
 export default function AboutMe() {
   return (
-    <>
+    <div className={styles.maindiv}>
       <h1>About the Developer</h1>
       <p>
         My name is Tejas Kohli and I am the author of this site. I made it
@@ -14,12 +16,13 @@ export default function AboutMe() {
       </p>
       <br />
       <h4>My Favorites:</h4>
-      <ul>
-        <li>- Book: The Book Thief</li>
-        <li>- TV Show: Andor</li>
-        <li>- Movie: Everything Everywhere All At Once</li>
-        <li>- Song: Ashitaka and San</li>
+      <ul className={styles.bullet}>
+        <li>Book: The Poisonwood Bible</li>
+        <li>TV Show: Andor</li>
+        <li>Movie: Everything Everywhere All At Once</li>
+        <li>Song: Ashitaka and San</li>
+        <li>Video Game: Minecraft</li>
       </ul>
-    </>
+    </div>
   );
 }

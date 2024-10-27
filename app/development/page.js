@@ -1,6 +1,8 @@
+import styles from "./page.module.css";
+
 export default function DevelopmentPage() {
   return (
-    <>
+    <div className={styles.maindiv}>
       <h1>Development</h1>
       <p>
         When I started working on this project in early 2022, I could not have
@@ -12,17 +14,17 @@ export default function DevelopmentPage() {
         record some of them here.
       </p>
       <br />
-      <ul>
+      <ul className={styles.bullet}>
         <li>
           {" "}
-          - scraping data from thousands of websites containing election results
+          scraping data from thousands of websites containing election results
           (I used Wikipedia and Dave Leip's election atlas for data)
         </li>
         <li>
-          - manually noting hundreds of county election results from books
+          manually noting hundreds of county election results from books
         </li>
         <li>
-          - making an{" "}
+          making an{" "}
           <b>
             <u>
               <a href="https://github.com/Bailsnob/Pol_Map3/blob/main/preliminary/findCountyCoords.mjs">
@@ -34,7 +36,7 @@ export default function DevelopmentPage() {
         </li>
         <li>
           {" "}
-          - creating an{" "}
+          creating an{" "}
           <b>
             <u>
               <a href="https://github.com/Bailsnob/Pol_Map3/blob/main/preliminary/colorizerRewritten.mjs">
@@ -44,9 +46,9 @@ export default function DevelopmentPage() {
           </b>{" "}
           to draw choropleth maps
         </li>
-        <li> - creating thousands of custom-made choropleth maps</li>
+        <li> creating thousands of custom-made choropleth maps</li>
         <li>
-          - creating thousands of downloadable csvs containing election results
+          creating thousands of downloadable csvs containing election results
         </li>
       </ul>
       <h1>Future Changes</h1>
@@ -57,6 +59,6 @@ export default function DevelopmentPage() {
         2023. I want to keep going to make a larger repository for people to use
         and to make the game more interesting with more party systems.
       </p>
-    </>
+    </div>
   );
 }
