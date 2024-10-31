@@ -48,11 +48,11 @@ export default function Navigation() {
               Downloadable Election Data
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/instructions" className={styles["nav-length"]}>
               Instructions
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/about-me" className={styles["nav-length"]}>
               About Me
