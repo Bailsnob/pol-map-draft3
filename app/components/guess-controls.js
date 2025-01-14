@@ -6,7 +6,7 @@ import { GameState } from "../context/game-context";
 export default function GuessControls() {
   const { gameState, setGameState } = useContext(GameState);
   const [winner, setWinner] = useState("D");
-  const [date, setDate] = useState("2020");
+  const [date, setDate] = useState("2024");
   const [margin, setMargin] = useState("0.1");
 
   function handleGuessClick() {
@@ -81,7 +81,7 @@ export default function GuessControls() {
           name="date-guess"
           id="date-guess"
           min="1932"
-          max="2022"
+          max="2024"
           step="1"
           placeholder="yyyy"
           data-bs-toggle="tooltip"

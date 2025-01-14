@@ -59,7 +59,7 @@ export default function SettingControls() {
     "Wyoming",
   ]);
   const [minYear, setMinYear] = useState("1964");
-  const [maxYear, setMaxYear] = useState("2020");
+  const [maxYear, setMaxYear] = useState("2024");
 
   function handleStartClick() {
     let randomState = states[Math.floor(Math.random() * states.length)];
@@ -190,7 +190,7 @@ export default function SettingControls() {
       <input
         type="number"
         min="1964"
-        max="2020"
+        max="2024"
         defaultValue={"1964"}
         onChange={handleMinYearChange}
       />
@@ -200,8 +200,8 @@ export default function SettingControls() {
       <input
         type="number"
         min="1964"
-        max="2020"
-        defaultValue={"2020"}
+        max="2024"
+        defaultValue={"2024"}
         onChange={handleMaxYearChange}
       />
       <br />

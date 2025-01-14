@@ -277,7 +277,7 @@ export default function Downloads() {
       <input
         type="number"
         min="1964"
-        max="2020"
+        max="2024"
         defaultValue={"1964"}
         id="date"
         onChange={handleYearChange}

@@ -91,7 +91,7 @@ export default function MapPanel() {
             everything. The two input boxes below allow you to chose between
             which years you want to guess. For example, if you are only familiar
             with elections in the 21st century, you could choose 2000 in the
-            first input box and 2020 in the second.
+            first input box and 2024 in the second.
           </p>
           <p>
             If you click with default settings, a choropleth for a random state

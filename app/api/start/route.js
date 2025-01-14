@@ -15,10 +15,10 @@ export async function POST(request) {
   // const maps = data.maps;
   let minYear = Number(body.minYear);
   if (minYear < 1964) minYear = 1964;
-  else if (minYear > 2020) minYear = 2020;
+  else if (minYear > 2024) minYear = 2024;
   let maxYear = Number(body.maxYear);
   if (maxYear < minYear) maxYear = minYear;
-  else if (maxYear >= 2020) maxYear = 2020;
+  else if (maxYear >= 2024) maxYear = 2024;
   const randomYear = body.answer.year
   const randomState = body.answer.state;
   const imgPath = path.join(
