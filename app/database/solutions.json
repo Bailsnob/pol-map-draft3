@@ -45,6 +45,7 @@
       "Utah": "d15.47",
       "Vermont": "r16.58",
       "Virginia": "d38.37",
+      "Washington": "d23.5",
       "West Virginia": "d10",
       "Wisconsin": "d32.27",
       "Wyoming": "d15.25"
@@ -94,6 +95,7 @@
       "Utah": "d39.55",
       "Vermont": "r13.15",
       "Virginia": "d40.84",
+      "Washington": "d36.5",
       "West Virginia": "d21.4",
       "Wisconsin": "d33.54",
       "Wyoming": "d23.11"
@@ -143,6 +145,7 @@
       "Utah": "d24.66",
       "Vermont": "r9.86",
       "Virginia": "d36.53",
+      "Washington": "d17.6",
       "West Virginia": "d14.2",
       "Wisconsin": "d1.83",
       "Wyoming": "d5.93"
@@ -192,6 +195,7 @@
       "Utah": "d21.02",
       "Vermont": "r14.13",
       "Virginia": "d24.97",
+      "Washington": "d14.6",
       "West Virginia": "d9.78",
       "Wisconsin": "r1.8",
       "Wyoming": "r2.46"
@@ -242,6 +246,7 @@
       "Vermont": "r24.62",
       "Virginia": "d6.85",
       "West Virginia": "d15.1",
+      "Washington": "d9.9",
       "Wisconsin": "d4.4",
       "Wyoming": "d4.35"
     },
@@ -290,6 +295,7 @@
       "Utah": "r17.86",
       "Vermont": "r43.22",
       "Virginia": "r12.96",
+      "Washington": "r9.6",
       "West Virginia": "d3.8",
       "Wisconsin": "r22.24",
       "Wyoming": "r25.62"
@@ -339,6 +345,7 @@
       "Utah": "r29.2",
       "Vermont": "r44.35",
       "Virginia": "r17.01",
+      "Washington": "r8.5",
       "West Virginia": "r8.2",
       "Wisconsin": "r23.74",
       "Wyoming": "r20.2"
@@ -390,6 +397,7 @@
       "Utah": "r9.6",
       "Vermont": "r17.3",
       "Virginia": "r5.4",
+      "Washington": "r2.4",
       "West Virginia": "d5.4",
       "Wisconsin": "r3.72",
       "Wyoming": "r10.02"
@@ -441,6 +449,7 @@
       "Utah": "d9.8",
       "Vermont": "d32.61",
       "Virginia": "d7.3",
+      "Washington": "d24.6",
       "West Virginia": "d35.8",
       "Wisconsin": "d24.4",
       "Wyoming": "d13.2"
@@ -492,6 +501,7 @@
       "Utah": "r19.42",
       "Vermont": "r9.22",
       "Virginia": "r10.9",
+      "Washington": "d2.1",
       "West Virginia": "d8.8",
       "Wisconsin": "r3.62",
       "Wyoming": "r20.3"
@@ -544,6 +554,7 @@
       "Vermont": "r26.19",
       "Virginia": "r37.7",
       "West Virginia": "r27.2",
+      "Washington": "r18.3",
       "Wisconsin": "r9.7",
       "Wyoming": "r38.54"
     },
@@ -594,6 +605,7 @@
       "Utah": "r28.7",
       "Vermont": "r10.20",
       "Virginia": "r1.33",
+      "Washington": "r3.9",
       "West Virginia": "d16.14",
       "Wisconsin": "d1.67",
       "Wyoming": "r19.49"
@@ -645,6 +657,7 @@
       "Utah": "r52.2",
       "Vermont": "r5.96",
       "Virginia": "r12.7",
+      "Washington": "r12.3",
       "West Virginia": "d4.5",
       "Wisconsin": "r4.72",
       "Wyoming": "r34.67"
@@ -696,6 +709,7 @@
       "Utah": "r49.82",
       "Vermont": "r17.11",
       "Virginia": "r25.2",
+      "Washington": "r13.5",
       "West Virginia": "r10.51",
       "Wisconsin": "r9.17",
       "Wyoming": "r42.27"
@@ -747,6 +761,7 @@
       "Utah": "r34.17",
       "Vermont": "r3.52",
       "Virginia": "r20.5",
+      "Washington": "d1.6",
       "West Virginia": "d4.74",
       "Wisconsin": "d3.61",
       "Wyoming": "r22.52"
@@ -798,6 +813,7 @@
       "Utah": "r16.02",
       "Vermont": "d15.69",
       "Virginia": "r4.4",
+      "Washington": "d11.4",
       "West Virginia": "d13.02",
       "Wisconsin": "d4.35",
       "Wyoming": "r5.6"
@@ -849,6 +865,7 @@
       "Utah": "r21.07",
       "Vermont": "d22.26",
       "Virginia": "r1.95",
+      "Washington": "d12.5",
       "West Virginia": "d14.75",
       "Wisconsin": "d10.33",
       "Wyoming": "r12.97"
@@ -900,6 +917,7 @@
       "Utah": "r40.5",
       "Vermont": "d9.93",
       "Virginia": "r8.03",
+      "Washington": "d5.6",
       "West Virginia": "r6.33",
       "Wisconsin": "d0.22",
       "Wyoming": "r40.1"
@@ -951,6 +969,7 @@
       "Utah": "r45.54",
       "Vermont": "d20.14",
       "Virginia": "r8.2",
+      "Washington": "d4.2",
       "West Virginia": "r12.86",
       "Wisconsin": "d0.38",
       "Wyoming": "r39.79"
@@ -1002,6 +1021,7 @@
       "Utah": "r28.02",
       "Vermont": "d37.01",
       "Virginia": "d6.3",
+      "Washington": "d16.3",
       "West Virginia": "r13.09",
       "Wisconsin": "d13.91",
       "Wyoming": "r32.24"
@@ -1053,6 +1073,7 @@
       "Utah": "r47.93",
       "Vermont": "d35.6",
       "Virginia": "d3.88",
+      "Washington": "d14.9",
       "West Virginia": "r26.76",
       "Wisconsin": "d6.94",
       "Wyoming": "r40.82"
@@ -1104,6 +1125,7 @@
       "Utah": "r18.08",
       "Vermont": "d25.96",
       "Virginia": "d5.32",
+      "Washington": "d15.7",
       "West Virginia": "r42.07",
       "Wisconsin": "r0.77",
       "Wyoming": "r46.29"
@@ -1155,6 +1177,7 @@
       "Utah": "r20.48",
       "Vermont": "d35.42",
       "Virginia": "d10.11",
+      "Washington": "d19.2",
       "West Virginia": "r38.93",
       "Wisconsin": "d0.63",
       "Wyoming": "r43.39"
@@ -1206,6 +1229,7 @@
       "Utah": "r21.6",
       "Vermont": "d31.5",
       "Virginia": "d5.8",
+      "Washington": "d18.2",
       "West Virginia": "r41.9",
       "Wisconsin": "r0.86",
       "Wyoming": "r45.8"

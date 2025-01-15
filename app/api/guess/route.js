@@ -67,6 +67,7 @@ export async function POST(request) {
         Utah: "d15.47",
         Vermont: "r16.58",
         Virginia: "d38.37",
+        Washington: "d23.5",
         "West Virginia": "d10",
         Wisconsin: "d32.27",
         Wyoming: "d15.25",
