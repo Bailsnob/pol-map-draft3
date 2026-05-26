@@ -163,7 +163,6 @@ export default function GameScreen() {
 
       <div className={styles.mapContainer}>
         <div className={styles.mapArea}>
-          <div className={styles.mapLabel}>State hidden · 1 election shown</div>
           <div className={styles.mapImageWrap}>
             {loadingNext ? (
               <span className={styles.mapLoading}>Loading next map…</span>
@@ -178,35 +177,6 @@ export default function GameScreen() {
                 unoptimized
               />
             )}
-          </div>
-          <div className={styles.mapLegend}>
-            <div className={styles.legendSwatch}>
-              <div
-                className={styles.swatch}
-                style={{
-                  background:
-                    "linear-gradient(to right, #e8534a, #922b21)",
-                }}
-              />
-              <span>Republican</span>
-            </div>
-            <div
-              style={{
-                width: 1,
-                height: 14,
-                background: "var(--border)",
-              }}
-            />
-            <div className={styles.legendSwatch}>
-              <div
-                className={styles.swatch}
-                style={{
-                  background:
-                    "linear-gradient(to right, #2980b9, #154360)",
-                }}
-              />
-              <span>Democrat</span>
-            </div>
           </div>
         </div>
       </div>
