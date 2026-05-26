@@ -1,83 +1,54 @@
 "use client";
 
 import { useState, createContext } from "react";
+import { DEFAULT_PLAYABLE_STATES } from "@/app/lib/playable-states";
 
 export const GameState = createContext({
-  stage: null,
-  states: null,
-  minYear: null,
-  maxYear: null,
-  map: null,
-  answer: null,
-  result: null,
+  gameState: null,
+  setGameState: () => {},
+  resetToSetup: () => {},
 });
+
+const initialSettings = {
+  electionType: "Presidential",
+  stateFilter: "",
+  minYear: "1932",
+  maxYear: "2024",
+  difficulty: "normal",
+  states: DEFAULT_PLAYABLE_STATES,
+};
 
 export default function GameContext({ children }) {
   const [gameState, setGameState] = useState({
-    stage: "setting", // vs "guessing" or "finished"
-    states: [
-      "Alabama",
-      "Alaska",
-      "Arizona",
-      "Arkansas",
-      "California",
-      "Colorado",
-      "Connecticut",
-      "Delaware",
-      "District Of Columbia",
-      "Florida",
-      "Georgia",
-      "Hawaii",
-      "Idaho",
-      "Illinois",
-      "Indiana",
-      "Iowa",
-      "Kansas",
-      "Kentucky",
-      "Louisiana",
-      "Maine",
-      "Maryland",
-      "Massachusetts",
-      "Michigan",
-      "Minnesota",
-      "Mississippi",
-      "Missouri",
-      "Montana",
-      "Nebraska",
-      "Nevada",
-      "New Hampshire",
-      "New Jersey",
-      "New Mexico",
-      "New York",
-      "North Carolina",
-      "North Dakota",
-      "Ohio",
-      "Oklahoma",
-      "Oregon",
-      "Pennsylvania",
-      "Rhode Island",
-      "South Carolina",
-      "South Dakota",
-      "Tennessee",
-      "Texas",
-      "Utah",
-      "Vermont",
-      "Virginia",
-      "Washington",
-      "West Virginia",
-      "Wisconsin",
-      "Wyoming",
-    ],
-    minYear: null,
-    maxYear: null,
+    stage: "setting",
+    ...initialSettings,
     map: null,
     answer: null,
     result: null,
+    round: 0,
+    streak: 0,
+    loading: false,
+    error: null,
   });
 
+  function resetToSetup() {
+    if (gameState.map) URL.revokeObjectURL(gameState.map);
+    setGameState((prev) => ({
+      ...prev,
+      stage: "setting",
+      map: null,
+      answer: null,
+      result: null,
+      loading: false,
+      error: null,
+    }));
+  }
+
   return (
-    <GameState.Provider value={{ gameState, setGameState }}>
+    <GameState.Provider value={{ gameState, setGameState, resetToSetup }}>
       {children}
     </GameState.Provider>
   );
 }
+
+export { initialSettings };

@@ -1,70 +1,72 @@
 "use client";
-import styles from "./navigation.module.css";
+
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useContext } from "react";
 import { GameState } from "@/app/context/game-context";
-import { useContext, useState } from "react";
+import styles from "@/app/styles/pollmap.module.css";
+
+const LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/elections-stuff", label: "Cool Elections" },
+  { href: "/development", label: "How It's Built" },
+  { href: "/downloads", label: "Data Downloads" },
+  { href: "/gif-generator", label: "GIF Generator" },
+  { href: "/about-me", label: "About" },
+];
 
 export default function Navigation() {
-  const { gameState, setGameState } = useContext(GameState);
-  const [stage, setStage] = useState();
-  function handleClick() {  
-    fetch("/api/start");
-    setGameState({
-      ...gameState,
-      stage: "setting",
-      states: null,
-      minYear: null,
-      maxYear: null,
-      map: null,
-      answer: null,
-      result: null,
-    });
-    setStage("setting");
+  const pathname = usePathname();
+  const router = useRouter();
+  const { resetToSetup } = useContext(GameState);
+
+  function handlePlayNow(e) {
+    e.preventDefault();
+    if (pathname === "/game") return;
+    router.push("/");
+    setTimeout(() => {
+      document.getElementById("start-round-btn")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   }
+
   return (
-    <header className={styles.header}>
-      <Link
-        href="/"
-        className={styles["nav-length"]}
-        id="home"
-        onClick={handleClick}
-      >
-        HOME
-      </Link>
-      <nav>
-        <ul>
+    <nav className={styles.nav}>
+      <div className={styles.navInner}>
+        <Link
+          href="/"
+          className={styles.navLogo}
+          onClick={() => resetToSetup()}
+        >
+          <div className={styles.logoMark} />
+          PollMap
+        </Link>
+        <ul className={styles.navLinks}>
+          {LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`${styles.navLink} ${
+                  pathname === href ? styles.navLinkActive : ""
+                }`}
+                onClick={() => {
+                  if (href === "/") resetToSetup();
+                }}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
           <li>
-            <Link href="/elections-stuff" className={styles["nav-length"]}>
-              Cool Elections
+            <Link
+              href="/"
+              className={`${styles.navLink} ${styles.navCta}`}
+              onClick={handlePlayNow}
+            >
+              Play Now →
             </Link>
           </li>
-          <li>
-            <Link href="/development" className={styles["nav-length"]}>
-              Development
-            </Link>
-          </li>
-          <li>
-            <Link href="/downloads" className={styles["nav-length"]}>
-              Downloadable Election Data
-            </Link>
-          </li>
-          {/* <li>
-            <Link href="/instructions" className={styles["nav-length"]}>
-              Instructions
-            </Link>
-          </li> */}
-          <li>
-            <Link href="/about-me" className={styles["nav-length"]}>
-              About Me
-            </Link>
-          </li>
-          {/* <li>
-            <Link href="/game" className={styles["nav-length"]} id="game" onClick={handleClick}>
-              Game
-            </Link>
-          </li> */}
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }

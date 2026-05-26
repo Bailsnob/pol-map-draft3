@@ -2,6 +2,7 @@
 
 import { useContext, useState } from "react";
 import { GameState } from "../context/game-context";
+import styles from "./guess-controls.module.css";
 
 export default function GuessControls() {
   const { gameState, setGameState } = useContext(GameState);
@@ -11,10 +12,14 @@ export default function GuessControls() {
 
   function handleGuessClick() {
     const answer = gameState.answer;
-    // console.log(gameState.answer);
     fetch("/api/guess", {
       method: "POST",
-      body: JSON.stringify({ winner: winner, date: date, margin: margin, answer: answer }),
+      body: JSON.stringify({
+        winner: winner,
+        date: date,
+        margin: margin,
+        answer: answer,
+      }),
       headers: { "Content-Type": "application/json" },
     })
       .then((data) => data.json())
@@ -32,83 +37,76 @@ export default function GuessControls() {
       .catch((err) => console.log("SOMETHING WENT WRONG!", err));
   }
 
-  function handleWinnerChange(e) {
-    setWinner(e.target.value);
-    // console.log(e.target.value);
-    // setWinner(document.getElementById("winner-guess"));
-    // console.log(document.getElementById("winner-guess"));
-  }
-
-  function handleDateChange(e) {
-    setDate(e.target.value);
-  }
-
-  function handleMarginChange(e) {
-    setMargin(e.target.value);
-  }
-
   return (
-    <>
-      <h1>
-        <u>Guess</u>
-      </h1>
-      <label for="winner-guess" class="form-label">
-        Who won?
-      </label>
-      <br />
-      <select
-        class="form-select menu-input"
-        name="winner-guess"
-        id="winner-guess"
-        data-bs-toggle="tooltip"
-        title="Which party won?"
-        onChange={handleWinnerChange}
+    <div className={styles.wrap}>
+      <p className={styles.title}>Your guesses</p>
+      <div className={styles.fields}>
+        <div className={styles.field}>
+          <label htmlFor="winner-guess" className={styles.label}>
+            Who won the state?
+          </label>
+          <select
+            className={styles.select}
+            name="winner-guess"
+            id="winner-guess"
+            title="Which party won?"
+            value={winner}
+            onChange={(e) => setWinner(e.target.value)}
+          >
+            <option value="D">Democrat</option>
+            <option value="R">Republican</option>
+            <option value="I">Independent</option>
+          </select>
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="date-guess" className={styles.label}>
+            Election year
+          </label>
+          <input
+            type="number"
+            className={styles.input}
+            name="date-guess"
+            id="date-guess"
+            min={1932}
+            max={2024}
+            step={1}
+            placeholder="e.g. 2008"
+            title="When was the election?"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <span className={styles.hint}>Presidential cycles from 1932 onward.</span>
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="margin-guess" className={styles.label}>
+            Winning margin (%)
+          </label>
+          <input
+            type="number"
+            className={styles.input}
+            name="margin-guess"
+            id="margin-guess"
+            min={0}
+            max={100}
+            step={0.1}
+            placeholder="e.g. 3.2"
+            title="Approximate statewide margin for the winner"
+            value={margin}
+            onChange={(e) => setMargin(e.target.value)}
+          />
+          <span className={styles.hint}>Positive number; your estimate of the spread.</span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className={styles.submit}
+        onClick={handleGuessClick}
       >
-        {/* <!-- <option selected>Winner</option> --> */}
-        <option value="D">Democrat</option>
-        <option value="R">Republican</option>
-        <option value="I">Independent</option>
-      </select>
-      <br />
-      <label for="date-guess" class="form-label">
-        Which Year?
-      </label>
-      <div class="form-floating">
-        {/* <!-- <label for="date-guess" class="form-label">Date:</label> --> */}
-        <input
-          type="number"
-          class="menu-input"
-          name="date-guess"
-          id="date-guess"
-          min="1932"
-          max="2024"
-          step="1"
-          placeholder="yyyy"
-          data-bs-toggle="tooltip"
-          title="When was the election?"
-          onChange={handleDateChange}
-        />
-      </div>
-      <label for="margin-guess" class="form-label">
-        What Margin?
-      </label>
-      <div class="form-floating">
-        <input
-          type="number"
-          class="menu-input"
-          name="margin-guess"
-          id="margin-guess"
-          min="0.0"
-          max="100.0"
-          step="0.1"
-          placeholder="Margin"
-          data-bs-toggle="tooltip"
-          title="By how much did they win?"
-          onChange={handleMarginChange}
-        />
-      </div>
-      <br />
-      <input type="button" value="Guess" onClick={handleGuessClick} />
-    </>
+        Submit guess
+      </button>
+    </div>
   );
 }
